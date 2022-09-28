@@ -12,6 +12,10 @@ export class GifServiceService {
   constructor(private http: HttpClient) { }
 
   postGif(gif:any){
-    return this.http.post<any>(`${this.baseUrl}/GifAdd/`, gif);
+    return this.http.post(`${this.baseUrl}/GifAdd/`, gif);
+  }
+
+  getGif(){
+    return this.http.get<any>(`${this.baseUrl}/GetGifs`);
   }
 }

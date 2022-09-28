@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GifAddComponent } from './components/gif-add/gif-add.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GifTableComponent,
     GifDetailsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    GifAddComponent
   ],
   imports: [
     BrowserModule,
