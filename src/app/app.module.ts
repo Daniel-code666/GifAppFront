@@ -9,6 +9,7 @@ import { GifDetailsComponent } from './components/gif-details/gif-details.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { GifAddComponent } from './components/gif-add/gif-add.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     GifTableComponent,
     GifDetailsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    GifAddComponent
   ],
   imports: [
     BrowserModule,
