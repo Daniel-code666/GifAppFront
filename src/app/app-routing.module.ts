@@ -6,7 +6,7 @@ import { GifTableComponent } from './components/gif-table/gif-table.component';
 
 const routes: Routes = [
   {path: 'home', component: GifTableComponent},
-  {path: 'gifDetail/:id', component: GifDetailsComponent},
+  {path: 'gifDetail/:Id', component: GifDetailsComponent},
   {path: 'gifAdd', component: GifAddComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home' },
   {path: '**', pathMatch: 'full', redirectTo: 'home'},

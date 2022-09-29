@@ -1,53 +1,16 @@
-<style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #a8e6cf;
-  font-family: Arial, Helvetica, sans-serif;  
-}
-
-.form-contact {
-  background: #FFF;
-  width: 100px;
-  position: absolute;
-  top: 25%;
-  left: 25%;
-}
-
-header {
-  width: 100%;
-  background: blue;
-  overflow: hidden;
-  color: white;
-  font-size: small;
-}
-
-header span {
-  font-size: 50px;
-  display: block;
-  text-align: center;
-  padding: 1rem;
-}
-
-</style>
-
-<header>
-    <span>
-      <h2>Producto igresado correctamente</h2>
-        <h3><b>No.{{id}}</b></h3>
-
-    </span>
-  </header>
-
 <div style="text-align: center;">
-<mat-label><h3><b>Titulo</b></h3> </mat-label>
-<mat-label>{{gifTag}}</mat-label>
+  <mat-label>
+    <h3><b>Id</b></h3>
+  </mat-label>
+  <mat-label>{{id}}</mat-label>
 
-<mat-label ><h3><b> Imagen</b></h3></mat-label>
-<img src="{{gifRoute}}" width="200"height="200">
+  <mat-label>
+    <h3><b>Imagen</b></h3>
+  </mat-label>
+  <img src="{{gifRoute}}">
 
+  <mat-label>
+    <h3><b>Etiqueta</b></h3>
+  </mat-label>
+  <mat-label>{{gifTag}}</mat-label>
 </div>

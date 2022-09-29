@@ -18,7 +18,7 @@ export interface Gif {
 })
 export class GifTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta','visualizar'];
+  displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta'];
   dataSource = new MatTableDataSource<Gif>();
 
   applyFilter(event: Event) {
@@ -38,15 +38,9 @@ export class GifTableComponent implements OnInit {
       console.log(this.dataSource)
     })
   }
-  verButton(id :any){
 
-  }
   getRow(row:any){
-
-    //console.log(row);
-
-    this.router.navigateByUrl(`/gifDetail/${row.Id}`)
-
+    this.router.navigateByUrl(`/gifDetail/${row.id}`)
   }
 
 }
