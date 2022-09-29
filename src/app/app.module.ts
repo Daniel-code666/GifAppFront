@@ -9,6 +9,9 @@ import { GifDetailsComponent } from './components/gif-details/gif-details.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GifAddComponent } from './components/gif-add/gif-add.component';
 import { SiderbarComponent } from './Shared/siderbar/siderbar.component';
 
@@ -24,9 +27,12 @@ import { SiderbarComponent } from './Shared/siderbar/siderbar.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
