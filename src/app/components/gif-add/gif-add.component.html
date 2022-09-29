@@ -1,23 +1,21 @@
+<header>
+  <h1 style="text-align: center;">Agregar imagen</h1>
+</header>
+<br>
 <section class="form-contact">
-  <header>
-    <span>
-      <h1>Ingresa tu producto</h1>
-    </span>
-  </header>
-  <br>
-  <div style="margin: 20px;">
+  <div style="text-align: center;">
     <form [formGroup]="elemento" (ngSubmit)="onSubmit()">
       <mat-form-field>
         <mat-label>Etiqueta de la imagen</mat-label>
-        <input matInput placeholder="Ej:Computadores a mitad de precio" formControlName="titulo">
+        <input matInput placeholder="Ej: Aviones" formControlName="gifTag">
       </mat-form-field>
-
+      <br>
       <mat-form-field>
-        <mat-label>Imagen</mat-label>
-        <input matInput placeholder="Ej: https:://www.imagenPrueba.com/imagen" formControlName="url">
+        <mat-label>Dirección de la imagen</mat-label>
+        <input matInput placeholder="Ej: https://..." formControlName="gifRoute">
       </mat-form-field>
-      <img src="" width="100px" height="100px">
-
+      <br>
+      <br>
       <div style="text-align: center;">
         <button mat-icon-button type="submit">
           <mat-icon>save</mat-icon>
