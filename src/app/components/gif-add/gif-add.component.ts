@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GifServiceService } from 'src/app/services/gif-service.service';
 
 @Component({
   selector: 'app-gif-add',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GifAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gifServ: GifServiceService, private router: Router) { }
 
   ngOnInit(): void {
   }
-
 }

@@ -18,4 +18,8 @@ export class GifServiceService {
   getGif(){
     return this.http.get<any>(`${this.baseUrl}/GetGifs`);
   }
+
+  getGifByTag(tag:any){
+    return this.http.get<any>(`${this.baseUrl}/GetGifsByTag/` + tag);
+  }
 }
