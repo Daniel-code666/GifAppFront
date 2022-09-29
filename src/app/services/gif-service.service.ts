@@ -27,4 +27,8 @@ export class GifServiceService {
   getGifByTag(tag:any){
     return this.http.get<any>(`${this.baseUrl}/GetGifsByTag/` + tag);
   }
+
+  getGifById(id:number){
+    return this.http.get<any>(`${this.baseUrl}/GetGifById/` + id);
+  }
 }
