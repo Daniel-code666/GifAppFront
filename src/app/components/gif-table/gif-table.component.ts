@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { GifServiceService } from 'src/app/services/gif-service.service';
+import { Router } from '@angular/router';
 
 export interface Gif {
   id: number;
@@ -15,12 +16,9 @@ export interface Gif {
   templateUrl: './gif-table.component.html',
   styleUrls: ['./gif-table.component.css']
 })
-export class GifTableComponent implements AfterViewInit {
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+export class GifTableComponent implements OnInit {
 
-
-  displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta'];
+  displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta','visualizar'];
   dataSource = new MatTableDataSource<Gif>();
 
   applyFilter(event: Event) {
@@ -28,11 +26,7 @@ export class GifTableComponent implements AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private gifServ: GifServiceService) { }
-  ngAfterViewInit(): void {
-    this.getGifs()
-    this.dataSource.paginator = this.paginator;
-  }
+  constructor(private gifServ: GifServiceService,private router:Router) { }
 
   ngOnInit(): void {
     this.getGifs()
@@ -43,6 +37,16 @@ export class GifTableComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource(data)
       console.log(this.dataSource)
     })
+  }
+  verButton(id :any){
+
+  }
+  getRow(row:any){
+
+    //console.log(row);
+
+    this.router.navigateByUrl(`/gifDetail/${row.Id}`)
+
   }
 
 }
