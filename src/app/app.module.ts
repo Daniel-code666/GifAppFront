@@ -17,6 +17,9 @@ import { GifAddComponent } from './components/gif-add/gif-add.component';
 import { SiderbarComponent } from './Shared/siderbar/siderbar.component';
 import { MatLabel } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
