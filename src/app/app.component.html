@@ -272,6 +272,18 @@
     width: 1920px;
   }
 
+  .container{
+    margin: 0px;
+  }
+  .navleft{
+    display: inline-block;
+    width: 20%;
+  }
+  .bodycontainer{
+    display: inline-block;
+    width: 70%;
+  }
+
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
@@ -302,22 +314,15 @@
     }
   }
 
-  .col {
-    width: 15%;
-  }
-
-  .col-2{
-    width: 60%;
-  }
 </style>
 <app-header></app-header>
 
-<div class="row container mt-4">
-  <div class="col">
+<div class="container">
+  <div class="navleft">
     <app-siderbar></app-siderbar>
   </div>
 
-  <div class="col-2">
+  <div class="bodycontainer">
     <router-outlet></router-outlet>
   </div>
 </div>
