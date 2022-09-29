@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GifAddComponent } from './components/gif-add/gif-add.component';
 import { SiderbarComponent } from './Shared/siderbar/siderbar.component';
 import { MatLabel } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatLabel } from '@angular/material/form-field';
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

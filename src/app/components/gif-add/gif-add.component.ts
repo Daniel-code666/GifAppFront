@@ -8,6 +8,7 @@ import { GifServiceService } from 'src/app/services/gif-service.service';
   styleUrls: ['./gif-add.component.css']
 })
 export class GifAddComponent implements OnInit {
+  valor1:any;
 
   constructor(private gifServ: GifServiceService, private router: Router) { }
 

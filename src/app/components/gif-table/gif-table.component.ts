@@ -38,9 +38,23 @@ export class GifTableComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  responseResult: any[] = []
+  imagesList: any[] = []
+
   constructor(private gifServ: GifServiceService) { }
 
   ngOnInit(): void {
+    this.getGifs()
+  }
+
+  getGifs(){
+    this.gifServ.getGif().subscribe((data:any) => {
+      this.responseResult = data
+      console.log(this.responseResult)
+      this.imagesList = this.responseResult
+      this.responseResult = []
+    })
   }
 
 }
