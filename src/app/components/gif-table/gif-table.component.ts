@@ -18,7 +18,7 @@ export interface Gif {
 })
 export class GifTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta'];
+  displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta', 'Eliminar'];
   dataSource = new MatTableDataSource<Gif>();
 
   applyFilter(event: Event) {
@@ -42,5 +42,9 @@ export class GifTableComponent implements OnInit {
   getRow(row:any){
     this.router.navigateByUrl(`/gifDetail/${row.id}`)
   }
-
+  eliminarButton(id:any){
+    this.gifServ.deleteById(id).subscribe(data=>{
+      console.log(data);
+    });
+  }
 }
