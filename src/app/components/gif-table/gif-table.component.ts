@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -15,7 +15,10 @@ export interface Gif {
   templateUrl: './gif-table.component.html',
   styleUrls: ['./gif-table.component.css']
 })
-export class GifTableComponent implements OnInit {
+export class GifTableComponent implements AfterViewInit {
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
 
   displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta'];
   dataSource = new MatTableDataSource<Gif>();
@@ -26,6 +29,10 @@ export class GifTableComponent implements OnInit {
   }
 
   constructor(private gifServ: GifServiceService) { }
+  ngAfterViewInit(): void {
+    this.getGifs()
+    this.dataSource.paginator = this.paginator;
+  }
 
   ngOnInit(): void {
     this.getGifs()
