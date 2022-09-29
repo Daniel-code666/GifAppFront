@@ -15,3 +15,7 @@ td, th {
 .mat-row:hover {
   cursor: pointer;
 }
+
+.items-center {
+  text-align: center;
+}
