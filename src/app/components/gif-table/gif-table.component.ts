@@ -22,7 +22,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
-
+var a;
 @Component({
   selector: 'app-gif-table',
   templateUrl: './gif-table.component.html',
