@@ -1,28 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { GifServiceService } from 'src/app/services/gif-service.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface Gif {
+  id: number;
+  gifRoute: string;
+  gifTag: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-var a;
+
 @Component({
   selector: 'app-gif-table',
   templateUrl: './gif-table.component.html',
@@ -30,17 +17,13 @@ var a;
 })
 export class GifTableComponent implements OnInit {
 
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['Id', 'Imagen', 'Etiqueta'];
+  dataSource = new MatTableDataSource<Gif>();
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  responseResult: any[] = []
-  imagesList: any[] = []
 
   constructor(private gifServ: GifServiceService) { }
 
@@ -50,10 +33,8 @@ export class GifTableComponent implements OnInit {
 
   getGifs(){
     this.gifServ.getGif().subscribe((data:any) => {
-      this.responseResult = data
-      console.log(this.responseResult)
-      this.imagesList = this.responseResult
-      this.responseResult = []
+      this.dataSource = new MatTableDataSource(data)
+      console.log(this.dataSource)
     })
   }
 

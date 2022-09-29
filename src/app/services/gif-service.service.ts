@@ -2,11 +2,16 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
+export interface Gif {
+  id: number;
+  gifRoute: string;
+  gifTag: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class GifServiceService {
-
   baseUrl = environment.HOST
 
   constructor(private http: HttpClient) { }
@@ -16,7 +21,7 @@ export class GifServiceService {
   }
 
   getGif(){
-    return this.http.get<any>(`${this.baseUrl}/GetGifs`);
+    return this.http.get<Gif>(`${this.baseUrl}/GetGifs`);
   }
 
   getGifByTag(tag:any){

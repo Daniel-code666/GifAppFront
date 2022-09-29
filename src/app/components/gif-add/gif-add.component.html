@@ -1,125 +1,29 @@
-
-<style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #a8e6cf;
-  font-family: Arial, Helvetica, sans-serif;  
-}
-
-.form-contact {
-  background: #FFF;
-  width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 7px 13px 37px rgba(0, 0, 0, .8);
-}
-
-header {
-  width: 100%;
-  background: #ff165d;
-  overflow: hidden;
-  color: white;
-  font-size: small;
-}
-
-header span {
-  font-size: 100px;
-  display: block;
-  text-align: center;
-  padding: 1rem;
-}
-
-.contact {
-  padding: .8rem;
-  overflow: hidden;
-  color: gray;
-}
-
-.contact label, .contact input, .contact textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 5px;   
-}
-
-.contact label {
-  font-weight: 700;
-}
-
-.contact input:not([type='submit']), .contact textarea {
-  border: none;
-  border-bottom: 2px solid #ff165d;
-  margin-bottom: 10px;
-  font-size: 20px;
-  outline: none;
-  color: gray;
-}
-
-.contact textarea {
-  min-height: 100px;
-}
-
-
-</style>
-
-<div>
-  <button mat-flat-button color="primary"  >
-    <mat-icon>
-      keyboard_return
-    </mat-icon>
-</button>
-</div>
 <section class="form-contact">
-    <header>
-      <span>
-        <h1>Ingresa tu producto</h1>
-      </span>
-    </header>
-<br>
+  <header>
+    <span>
+      <h1>Ingresa tu producto</h1>
+    </span>
+  </header>
+  <br>
   <div style="margin: 20px;">
-    <!--<form [formGroup]="elemento" (ngSubmit)="onSubmit()">-->
+    <form [formGroup]="elemento" (ngSubmit)="onSubmit()">
       <mat-form-field>
-          <mat-label>Titulo</mat-label>
-          <input matInput placeholder="Ej:Computadores a mitad de precio" formControlName="titulo"  >
+        <mat-label>Etiqueta de la imagen</mat-label>
+        <input matInput placeholder="Ej:Computadores a mitad de precio" formControlName="titulo">
       </mat-form-field>
-      
+
       <mat-form-field>
-          <mat-label>Imagen</mat-label>
-          <input matInput placeholder="Ej: https:://www.imagenPrueba.com/imagen" formControlName="url"  >
+        <mat-label>Imagen</mat-label>
+        <input matInput placeholder="Ej: https:://www.imagenPrueba.com/imagen" formControlName="url">
       </mat-form-field>
-          <img src="" width="100px" height="100px">
-    
-      <mat-form-field>
-          <mat-label>Categoria</mat-label>
-          <input matInput placeholder="Ej:Electronicos" formControlName="Categoria" >
-      </mat-form-field>
-      
-      <mat-form-field>
-          <mat-label>Precio</mat-label>
-          <input type="number" matInput placeholder="Ej:23.99" formControlName="precio">
-      </mat-form-field>
-      
-    
-      <mat-form-field>
-          <mat-label>Descripcion</mat-label>
-          <textarea matInput type="textarea" formControlName="mensaje"></textarea>
-      </mat-form-field>
-      
-    
+      <img src="" width="100px" height="100px">
+
       <div style="text-align: center;">
-          <button mat-icon-button type="submit">
-              <mat-icon>save</mat-icon>
-              <span>Registrar</span>
-          </button>
+        <button mat-icon-button type="submit">
+          <mat-icon>save</mat-icon>
+          <span>Guardar</span>
+        </button>
       </div>
-    <!--</form>-->
+    </form>
   </div>
 </section>
-
-<br><br>
