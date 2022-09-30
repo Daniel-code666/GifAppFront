@@ -31,7 +31,8 @@ export class GifServiceService {
   getGifById(id:number){
     return this.http.get<any>(`${this.baseUrl}/GetGifById/` + id);
   }
+  
   deleteById(id:number){
-    return this.http.get<any>(`${this.baseUrl}/GifDelete/` + id);
+    return this.http.delete<any>(`${this.baseUrl}/GifDelete/` + id);
   }
 }

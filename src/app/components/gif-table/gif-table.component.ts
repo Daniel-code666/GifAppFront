@@ -39,12 +39,14 @@ export class GifTableComponent implements OnInit {
     })
   }
 
-  getRow(row:any){
-    this.router.navigateByUrl(`/gifDetail/${row.id}`)
+  getRow(element:any){
+    this.router.navigateByUrl(`/gifDetail/${element.id}`)
   }
+
   eliminarButton(id:any){
     this.gifServ.deleteById(id).subscribe(data=>{
       console.log(data);
+      this.getGifs()
     });
   }
 }
